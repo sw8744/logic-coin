@@ -2,15 +2,25 @@ import './App.css';
 import logic from './logic.jpeg';
 import { useEffect, useState } from 'react';
 
+function Button({ handleOnclick, isDisable }) {
+  return (
+    <button className='answerButton' onClick={handleOnclick} disabled={isDisable}>
+      {isDisable ? "모든 칸을 다 채우세요!" : "정답 확인"}
+    </button>
+  );
+}
+
 function App() {
   const [answer, setAnswer] = useState([]);
   const [wrongAnswer, setWrongAnswer] = useState(100);
   const [correctAnswer, setCorrectAnswer] = useState([]);
+  const [isAllfill, setIsAllFill] = useState(false);
 
   const getAnswer = () => {
     const answerList = document.getElementsByClassName('questionAnswer');
     const answerArray = Array.from(answerList).map(answer => answer.value);
     setAnswer(answerArray);
+    setIsAllFill(answerArray.every(answer => answer !== ''));
   };
 
   const getCorrectAnswer = async () => {
@@ -458,7 +468,8 @@ function App() {
         </div>
       </div>
       <div className='buttonContainer'>
-        <button className='answerButton' onClick={() => {checkAnswer()}}>정답 확인</button>
+        <Button handleOnclick={() => {checkAnswer()}} isDisable={!isAllfill} />
+        
         
       </div>
       <div className='infoContainer'>
