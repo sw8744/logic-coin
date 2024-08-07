@@ -1,0 +1,59 @@
+.question {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#time {
+  width: 25px;
+}
+
+.questionContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.questionNumber {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.questionContainer {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+}
+.answerButton {
+    font-size: 30px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.logic {
+    position: absolute;
+    width: 200px;
+    top: 0px;
+    right: 0px;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.info {
+    font-size: 15px;
+    font-weight: bold;
+}
